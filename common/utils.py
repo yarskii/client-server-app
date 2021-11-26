@@ -18,4 +18,3 @@ def send_mess(sock, message):
     js_message = json.dumps(message)
     encoded_message = js_message.encode(ENCODING)
     sock.send(encoded_message)
-
