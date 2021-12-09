@@ -5,10 +5,12 @@ import sys
 
 from utils import get_msg, send_msg
 import logs.server_log_config
+from decorators import log
 
 SERVER_LOGGER = logging.getLogger('server')
 
 
+@log
 def client_message_handler(message):
     if 'action' in message and message['action'] == 'presence' and 'time' in message \
             and 'user' in message and message['user']['account_name'] == 'User':

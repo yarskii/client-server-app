@@ -6,11 +6,13 @@ import time
 
 from utils import send_msg, get_msg
 import logs.client_log_config
+from decorators import log
 
 
 CLIENT_LOGGER = logging.getLogger('client')
 
 
+@log
 def new_presence(name='User'):
     get = {
         'action': 'presence',
@@ -22,6 +24,7 @@ def new_presence(name='User'):
     return get
 
 
+@log
 def answer(message):
     if 'response' in message:
         if message['response'] == 200:
