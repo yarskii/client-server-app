@@ -68,7 +68,7 @@ def arg_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('addr', default='127.0.0.1', nargs='?')
     parser.add_argument('port', default=7770, type=int, nargs='?')
-    parser.add_argument('-m', '--mode', default='listen', nargs='?')
+    parser.add_argument('-m', '--mode', default='send', nargs='?')
     namespace = parser.parse_args(sys.argv[1:])
     serv_address = namespace.addr
     serv_port = namespace.port
